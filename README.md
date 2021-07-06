@@ -6,7 +6,7 @@
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/valdenirtrevisan/curso_socialbooksapi">
 </p>
 
-<p align="justify" style="font-size: 16px">Repositório utilizado para acompanhar o curso da AlgaWorks (Começando com Web Services RESTful e Spring), o projeto possui uma estrutura básica para controlar livros e autores sendo possível adicionar comentarios aos livros. Existe um handler para tratar as exceções para o usuário utilizando `ControllerAdvice`, foi configurado também um modelo básico de autenticação com Spring Security</p>
+<p align="justify" style="font-size: 16px">Repositório utilizado para acompanhar o curso da AlgaWorks (Começando com Web Services RESTful e Spring), o projeto possui uma estrutura básica para controlar livros e autores sendo possível adicionar comentarios aos livros. Existe um handler para tratar as exceções para o usuário utilizando <i>@ControllerAdvice</i>, foi configurado também um modelo básico de autenticação com Spring Security</p>
 
 <h2>💻 Tecnologias:</h2>
 
