@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "9547c9d9-a952-4b5b-bfe3-38e860717c1f",
+		"name": "Socialbooks API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "livro",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "algaworks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/livros",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/livros/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"livros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Livro 02\",\r\n    \"autor\": {\r\n        \"id\": 1\r\n    },\r\n    \"publicacao\": \"01/07/2021\",\r\n    \"editora\": \"Editora 01\",\r\n    \"resumo\": \"resumo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/livros",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Livro 01\",\r\n    \"autor\": \"Autor 01\",\r\n    \"editora\": \"Editora 01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/livros/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"livros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remover",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/livros/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"livros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comentario",
+			"item": [
+				{
+					"name": "salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"texto\": \"é um ótimo livro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/livros/1/comentarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"livros",
+								"1",
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"texto\": \"é um ótimo livro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/livros/1/comentarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"livros",
+								"1",
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "autores",
+			"item": [
+				{
+					"name": "listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"texto\": \"é um ótimo livro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/autores",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Autor 01\",\r\n    \"nascimento\": \"01/01/2021\",\r\n    \"nacionalidade\": \"Brasileiro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/autores",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Autor 01\",\r\n    \"nascimento\": \"01/01/1990\",\r\n    \"nacionalidade\": \"Brasileiro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/autores/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"autores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
